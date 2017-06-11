@@ -1,0 +1,147 @@
+IMPLEMENTAÇÃO DE SERVIÇOS RESTFUL
+
+IMPORTANTE: 
+- DEVEM SER CADASTRADOS DADOS REAIS NA BASE DADOS.
+- DEVE SER ENTREGUE DOCUMENTAÇÃO DOS SERVIÇOS EM ARQUIVO WORD COMO DESCRITO NOS ITENS DO TRABALHO.
+
+########################################################################################################
+
+1 - De acordo com Josuttis (2007) defina serviço básico, serviço básico de dados, serviço básico de lógica, serviço
+composto e serviço de processo.
+Observação: A resposta deve ser apresentada no arquivo de documentação.
+
+#####################################################################################################################
+
+2 - Baseado na implementação dos serviços do trabalho 3, implemente serviços básico de acesso a dados empregando os
+conceitos de serviços RESTful. Realize os seguintes passos:
+- Construir um banco de dados que seja capaz de armazenar informações de autores e publicações. Publicações devem
+armazenar a sua classificação Qualis.
+- Implementação de classe DAO para executar operações CRUD (Create, Retrieve, Update e Delete) sobre a tabela Publicacao
+e Autor
+- Implementação de métodos do serviço para encapsular o acesso ao banco de dados.
+- Aplicação cliente para invocar as operações CRUD expostas pelo serviço.
+
+Observações:
+- São apresentados exemplos de publicações no final deste documento que podem ser usados para a construção do banco de
+dados.
+- O script de criação do banco de dados e carga de dados reais devem ser apresentados no arquivo de documentação.
+- Os endpoints para os serviços devem ser apresentados no arquivo de documentação bem como a estrutura dos dados de
+entrada e de saída, além de um exemplo de chamada do serviço.
+- Os endpoints do serviço devem considerar os princípios RESTful.
+
+######################################################################################################################
+
+3 - Implemente serviço básico de dados que retorne os títulos das publicações, o ano da publicação, o nome de citação
+do autor e a citação da publicação.
+
+Observação: 
+- O endpoint para o serviço deve ser apresentado no arquivo de documentação bem como a estrutura dos dados de entrada
+e de saída, além de um exemplo de chamada do serviço.
+- O código correspondente a este item deve ser apresentada na documentação.
+
+######################################################################################################################
+
+4 - Implemente serviço básico de dados que retorne o título e o qualis das publicações de determinado autor.
+
+Observação: 
+- O endpoint para o serviço deve ser apresentado no arquivo de documentação bem como a estrutura dos dados de entrada e
+de saída, além de um exemplo de chamada do serviço.
+- O código correspondente a este item deve ser apresentada na documentação.
+
+######################################################################################################################
+
+5 - Implemente serviço básico de lógica que calcule as pontuações de um autor basedo nas suas publicações.
+Para realizar o cálculo considere a seguinte tabela.
+As pontuações do qualis para journals podem ser obtidas a partir de http://qualis.capes.gov.br/ e as
+pontuações para conferências podem ser obtidas a partir de http://qualis.ic.ufmt.br/ ou
+http://www.cesar.edu.br/qualis/.
+Ressalva‐se que não são consideradas na Classificação de  Conferências algumas conferências
+cujos artigos são publicados integralmente em periódicos já  classificados no sistema
+Qualis de Periódicos – o WebQualis (ex., VLDB, SBBD e SIGGRAPH, entre outros).
+
+- O endpoints para os serviços devem ser apresentados no arquivo word bem como a estrutura dos dados de
+ entrada e de saída, além de um exemplo de chamada do serviço.
+- Os endpoints do serviço devem considerar os princípios RESTful.
+- O código correspondente a este item deve ser apresentada na documentação.
+
+
+	                                                        Peso
+Artigo em revista Qualis A1 em Ciência da Computação		30
+Artigo em revista Qualis A2 em Ciência da Computação		26
+Artigo em revista Qualis B1 em Ciência da Computação		20
+Artigo em revista Qualis B2 em Ciência da Computação		16
+Artigo em revista Qualis B3 em Ciência da Computação		14
+Artigo em revista Qualis B4 em Ciência da Computação		12
+Artigo em revista Qualis B5 em Ciência da Computação		10
+Artigo em revista Qualis C em Ciência da Computação			 4
+Artigo em revista (sem Qualis) em Ciência da Computação      4
+
+
+Artigo em conferência Qualis A1 em Ciência da Computação	20
+Artigo em conferência Qualis A2 em Ciência da Computação	18
+Artigo em conferência Qualis B1 em Ciência da Computação	16
+Artigo em conferência Qualis B2 em Ciência da Computação	12
+Artigo em conferência Qualis B3 em Ciência da Computação	10
+Artigo em conferência Qualis B4 em Ciência da Computação	 8
+Artigo em conferência Qualis B5 em Ciência da Computação	 6
+Artigo em conferência Qualis C em Ciência da Computação		 4
+Artigo em conferência (sem Qualis) em Ciência da Computação	 4
+Capítulo de livro 											 4
+Livro 														 4
+Edição de livro 											 4
+
+
+######################################################################################################################
+
+
+6 - Implemente serviço composto que calcule a pontuação de um autor, ou seja, ele deve invocar serviço que obtém as
+publicações dos autores e, em seguida, invocar serviço que calcula a pontuação de um autor.
+
+Ao realizar este trabalho o aluno terá:
+- Praticadoos conceitos RESTful
+- Configurado o ambiente de desenvolvimento
+- Implementado serviços web RESTful de dados e de lógica.
+- Implementado cliente para o serviço.
+- Praticado a invocação remota de métodos entre cliente e consumidor, simulado no laptop do aluno.
+- Exposto o acesso a um banco de dados através de uma camada de serviços de dados.
+- Entendido na prática conceitos importantes em uma arquitetura orientada a serviços.
+
+#####################################################################################################################
+
+A entrega do trabalho deve ser através de um arquivo zip contendo os códigos fontes referentes às classes
+implementadas.
+ O objetivo é não ser um arquivo grande para ser enviado ao professor ou armazenado no Moodle quando da entrega do
+ trabalho.
+
+Exemplos de publicações:
+SILVA, A. F., AZEVEDO, L. G., OHTA, R. L., BINOTTO, A. P. D., SANTOS, M. N., SEGURA, V. C. V. B., GANDOUR, F. L.
+“A Cloud-based Architecture for the Internet of Things Targeting Industrial Engine Remote Monitoring”.
+ In: Sensors to Cloud Architectures Workshop (SCAW 2015),San Francisco, 2015.
+
+DE BAYSER, M., AZEVEDO, L. G., CERQUEIRA, R. “ResearchOps: The case for DevOps in scientific applications”.
+In: 2015 IFIP/IEEE International Symposium on Integrated Network Management (IM), v. 1., pp. 1398-1404, Ottawa, 2015.
+
+TIZZEI, L. P., AZEVEDO, L.G. ; de Bayser, M. P. M., CERQUEIRA, R.
+“Architecting Cloud Tools using Software Product Line Techniques: an Exploratory Study”.
+In: 30th ACM/SIGAPP Symposium On Applied Computing, v. 2. p. 1441-1448, Salamanca, 2015.
+
+SEGURA, V. C. V. B., TIZZEI, L. P., RAMIREZ, J. P. F., SANTOS, M. N., AZEVEDO, L. G., CERQUEIRA, R. “WISE-SPL: Bringing
+Multi-tenancy to the Weather InSights Environment System”.
+In: 5th International Workshop on Product LinE Approaches in Software Engineering, Florence, 2015.
+
+Outros exemplos de publicações podem ser encontrados nos currículos lattes de pesquisadores brasileiros, tais como:
+Exemplos de produções bibliográficas podem ser encontrados nos currículos lattes de pesquisadores, como, por exemplo:
+•	Leonardo Guerreiro Azevedo: 
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4768447Y7
+•	Márcio de Oliveira Barros:
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4727054U4
+•	Kate Cerqueira Revoredo
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4703485P6
+•	Gleison do Santos Souza
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4732381J0
+•	Fernanda Araujo Baião de Amorim
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4791930J4
+•	Flávia Maria Santoro
+http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4704373P4
+
+

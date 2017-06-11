@@ -99,3 +99,15 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+.idea/
+ServicoComposto/Modelo/__pycache__/
+ServicoComposto/Dao/__pycache__/
+Dao/__pycache__/AutorDAO.cpython-36.pyc
+Dao/__pycache__/Dao.cpython-36.pyc
+Dao/__pycache__/PublicacaoDAO.cpython-36.pyc
+Modelo/__pycache__/Autor.cpython-36.pyc
+Modelo/__pycache__/Publicacao.cpython-36.pyc
+BasicoDeLogica/__pycache__/
+Dao/__pycache__/
+Modelo/__pycache__/

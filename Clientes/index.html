@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" media="screen" title="no title" charset="utf-8">
+        <style>
+            .editForm {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="app">
+            <button v-on:click="getAutores">try</button>
+
+            <div class="ui container">
+                <vuetable ref="vuetable" api-url="http://127.0.0.1:555/autor" :fields="fields" pagination-path="">
+                     <template slot="actions" scope="props">
+                        <div class="table-button-container">
+                            <form method="post" class="editForm">
+                                <input type="text" name="nome" v-model="nome">
+                                <button type="button" class="ui button" @click="updateAutor(props.rowData)"><i class="fa fa-edit"></i> Edit</button>&nbsp;&nbsp;
+                            </form>
+                            <button class="ui basic red button" @click="deleteRow(props.rowData)"><i class="fa fa-remove"></i> Delete</button>&nbsp;&nbsp;
+                        </div>
+                     </template>
+                </vuetable>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <form method="post">
+                <input type="text" name="cpf" v-model="cpf">
+                <input type="text" name="nome" v-model="nome">
+                <input type="button" v-on:click="addAutor" value="inserir autor">
+            </form>
+        </div>
+
+
+        <script src="./vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/vuetable-2@1.6.0"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" charset="utf-8"></script>
+
+
+        <script src="./index.js"></script>
+
+    </body>
+</html>
